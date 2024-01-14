@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-backend",
+  "version": "1.0.0",
+  "description": "learn backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "chien",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "ejs": "3.1.8",
+    "express": "4.18.2",
+    "mysql2": "2.3.3"
+  }
+}

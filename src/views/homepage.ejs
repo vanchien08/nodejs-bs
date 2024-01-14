@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/home">Home</a>
+        <a href="/create">Create</a>
+        <a href="/update">Update</a>
+        <a href="#about">About</a>
+      </div>
+
+      <!-- table -->
+      <div class="container">
+        <!-- <%= JSON.stringify(listUsers) %> -->
+        <div class="title">List user</div>
+        <table>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Name</th>
+              <th>City</th>
+              <th>Action</th>
+            </tr>
+            
+            <!-- <tr>
+              <td>Lois</td>
+              <td>Griffin</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+              <td>Joe</td>
+              <td>Swanson</td>
+              <td>$300</td>
+            </tr>
+            <tr>
+              <td>Cleveland</td>
+              <td>Brown</td>
+              <td>$250</td>
+            </tr> -->
+            
+
+            <!-- <% for (let i = 0; i < listUsers.length; i++) { %>
+              <tr>
+                <td><%= listUsers[i].id %></td>
+                <td><%= listUsers[i].email %></td>
+                <td><%= listUsers[i].name %></td>
+                <td><%= listUsers[i].city %></td>
+                <td>
+                  <button>
+                      edit
+                  </button>
+                  <button>
+                      delete
+                  </button>
+                </td>
+              </tr>
+              <% } %> -->
+
+
+              <!-- foreach -->
+              <% listUsers.forEach(function(user,index) { %>
+                <tr>
+                  <td><%= user.id %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.name %></td>
+                  <td><%= user.city %></td>
+                  <td>
+                    <div class="feature">
+                      <a class="tagUpdate" href="/update/<%= user.id %>">
+                        edit
+                    </a>
+                    <form action="/delete-user/<%= user.id %>" method="post">
+                      <button>
+                        delete
+                    </button>
+                  </form>
+                    </div>
+                   
+                    
+                  </td>
+                </tr>
+             <% }); %> 
+
+
+
+          </table>
+      </div>
+      
+      <!-- <div class="form">
+        <form action="/creat-user" method ="post">
+
+        
+        <fieldset>
+            <legend>
+                add user
+            </legend>
+            <div class="input" >
+                <lable>Email</lable>
+                <input type="'text" id="emailid" name="email"/>
+            </div>
+            <div class="input" >
+                <lable>Name</lable>
+                <input type="'text" id="nameid" name="name"/>
+            </div>
+            <div class="input" >
+                <lable>City</lable>
+                <input type="'text" id="Cityid" name="City"/>
+            </div>
+            <div class="button">
+                <button>
+                    save
+                </button>
+            </div>
+        </fieldset>
+
+    </form>
+      </div> -->
+</body>
+</html>
